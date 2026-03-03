@@ -16,8 +16,8 @@ Et simpelt command line tool til valutaomregning via [ExchangeRate API](https://
 ### 1. Klon projektet
 
 ```bash
-git clone https://github.com/dit-brugernavn/dit-repo.git
-cd dit-repo
+git@github.com:SofusVingaard/python-obligatorisk-1.git
+cd python-obligatorisk-1
 ```
 
 ### 2. Opret virtuelt miljø
