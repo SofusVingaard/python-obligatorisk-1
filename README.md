@@ -39,6 +39,10 @@ source .venv/bin/activate
 ```
 
 ### 4. Installer dependencies
+´´bash
+uv sync
+´´
+
 
 ```bash
 pip install -r requirements.txt
