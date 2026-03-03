@@ -39,11 +39,12 @@ source .venv/bin/activate
 ```
 
 ### 4. Installer dependencies
+**Via uv**
 ```bash
 uv sync
 ```
 
-
+**via pip**
 ```bash
 pip install -r requirements.txt
 ```
