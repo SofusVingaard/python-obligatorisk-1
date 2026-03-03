@@ -15,12 +15,9 @@ load_dotenv()
 key = os.getenv('API_KEY')
 
 if not key:
-    print('No API key found. Run: python3 valuta.py --key YOUR_API_KEY')
+    print('Ingen api nøgle fundet. Kør: python3 valuta.py --key DIN_API_NØGLE')
     sys.exit(1)
 
-
-
-print('api key is: ' + key)
 
 print('Indtast første valuta')
 firstValuta = input()
@@ -38,11 +35,19 @@ res = requests.get(URL)
 
 data = res.json()
 
+
+
+
 if str(data['result']) == 'error':
-    print('Der skete en fejl')
-    print('Sikre dig at du indtaster rigtige valutaer')
-    print('Fx: euro = eur og dollars = usd')
-    sys.exit()
+    if str(data['error-type']) == 'invalid-key':
+        print('Forkert api nøgle')
+        print('Kør programmet igen med python3 valuta.py --key DEN_RIGTIGE_NØGLE')
+        sys.exit(1)
+    else:
+        print('Der skete en fejl')
+        print('Sikre dig at du indtaster rigtige valutaer')
+        print('Fx: euro = eur og dollars = usd')
+        sys.exit()
 
 print('Konverterings rate: ' + str(data['conversion_rate']))
 print('Din konvertering bliver: ' + str(data['conversion_result']) + ' ' + str(data['target_code']))
