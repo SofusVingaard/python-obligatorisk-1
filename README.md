@@ -39,9 +39,9 @@ source .venv/bin/activate
 ```
 
 ### 4. Installer dependencies
-´´bash
+```bash
 uv sync
-´´
+```
 
 
 ```bash
